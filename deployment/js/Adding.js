@@ -23,6 +23,8 @@ export function add() {
     resetVoting()
     voting('reset')
   } else { clear() }
+  
+  document.activeElement.blur()
 }
 
 

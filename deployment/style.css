@@ -578,6 +578,30 @@ video {
   margin-top: -1.125rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-\[-1rem\] {
+  margin-top: -1rem;
+}
+
+.mt-\[-12px\] {
+  margin-top: -12px;
+}
+
+.mt-\[-10px\] {
+  margin-top: -10px;
+}
+
+.mt-\[-9px\] {
+  margin-top: -9px;
+}
+
 .flex {
   display: flex;
 }
@@ -757,6 +781,11 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -831,6 +860,10 @@ video {
   font-style: italic;
 }
 
+.leading-normal {
+  line-height: 1.5;
+}
+
 .text-neutral-300 {
   --tw-text-opacity: 1;
   color: rgb(212 212 212 / var(--tw-text-opacity));
@@ -861,6 +894,11 @@ video {
 
 .outline-neutral-400 {
   outline-color: #a3a3a3;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition {

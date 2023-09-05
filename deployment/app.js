@@ -40,6 +40,7 @@ import { removeArchive, renderArchive } from "./js/Archive.js"
 			if (JSON.parse(localStorage.getItem('values')).length > 3) {
 				id('start-voting').disabled = false
 			}
+			document.activeElement.blur()
 		}
 
 	id('start-voting').addEventListener('click', () => {

@@ -10,6 +10,7 @@ import { renderArchive } from "./Archive.js"
 export function vote(side) {
   values_rank.at(-1)[id(`${side}-vote-btn`).innerText]++
   render()
+  document.activeElement.blur()
 }
 
 
@@ -19,8 +20,9 @@ export function voting(status) {
   if (status === 'start') {
       id('left-vote-btn').disabled = false
       id('right-vote-btn').disabled = false
-
+      document.activeElement.blur()
   }
+
   else if (status === 'end') {
       id('left-vote-btn').disabled = true
       id('right-vote-btn').disabled = true
@@ -29,6 +31,7 @@ export function voting(status) {
         archiveRanking()
         renderArchive(0)
       }
+      
       generateRanking()
         navigateTo('#ranking')
       resetVoting()
@@ -37,6 +40,7 @@ export function voting(status) {
       id('right-vote-btn').textContent = 'finished'
       id('start-voting').disabled = true
   }
+
   else if (status = 'reset') {
       id('left-vote-btn').disabled = true
       id('right-vote-btn').disabled = true
