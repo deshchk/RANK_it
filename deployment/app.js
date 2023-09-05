@@ -99,6 +99,12 @@ const navItems = id('navigation').querySelectorAll('li > a')
 const navAnchors = id('wrapper').querySelectorAll('.nav-anchor')
 
 export function navigateTo(section) {
+	navItems.forEach(item => {
+		item.dataset.active = false
+		if (item.getAttribute('href') === section) {
+			item.dataset.active = true
+		}
+	})
 	const active = query(section, id('wrapper'))
 		navAnchors.forEach(anchor => {
 			anchor.dataset.hidden = true
@@ -111,9 +117,7 @@ id('navigation').addEventListener('click', e => {
 	const clicked = e.target.closest('a')
 
 	if (clicked) {
-		navItems.forEach(item => {item.dataset.active = false})
 			navigateTo(clicked.getAttribute('href'))
-		clicked.dataset.active = true
 	}
 })
 

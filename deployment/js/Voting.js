@@ -30,7 +30,7 @@ export function voting(status) {
         renderArchive(0)
       }
       generateRanking()
-      navigateTo('#ranking')
+        navigateTo('#ranking')
       resetVoting()
 
       id('left-vote-btn').textContent = 'voting'
