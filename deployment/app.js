@@ -37,7 +37,9 @@ import { removeArchive, renderArchive } from "./js/Archive.js"
 			resetRank()
 			splitValues()
 			renderVoting(votingRound)
-			id('start-voting').disabled = false
+			if (JSON.parse(localStorage.getItem('values')).length > 3) {
+				id('start-voting').disabled = false
+			}
 		}
 
 	id('start-voting').addEventListener('click', () => {
@@ -133,6 +135,9 @@ id('navigation').addEventListener('click', e => {
 // INITIALIZE
 	render()
 	window.addEventListener('load', () => {
+		if (JSON.parse(localStorage.getItem('values')).length > 3) {
+			id('start-voting').disabled = false
+		} // ABLE TO START VOTING
 		renderRanking() // RANKING
 		renderArchive(0) // ARCHIVE
 		// NAVIGATION
