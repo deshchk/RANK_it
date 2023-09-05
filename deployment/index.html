@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./style.css" rel="stylesheet">
+		<script defer src="./app.js" type="module"></script>
+		<title>val·u</title>
+	</head>
+
+	<body class="flex place-content-center">
+
+		<div id="wrapper"
+			class="
+				w-full max-w-lg
+				flex flex-col
+				px-4 pb-4 mt-1 mb-4
+			"
+		>
+
+			<!-- HEADER -->
+				<header
+					class="
+						flex flex-col gap-5 items-center					
+						py-4 mb-1
+						select-none
+					"
+				>
+					<img
+						src="./imgs/logo.svg"
+						alt="logo" draggable="false"
+						class="w-1/3 min-w-[130px]"
+					>
+
+					<nav class="w-full">
+						<menu id="navigation"
+							class="flex gap-4 justify-between flex-wrap"
+						>
+							<li class="flex-1 flex">
+								<a href="#adding"
+									draggable="false"
+									data-active="true"
+									class="
+										flex-1 text-center items-center
+										outline-none border px-3 py-2
+										
+										data-[active=true]:text-amber-900
+										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
+										hover:border-yellow-500 hover:bg-yellow-50
+										focus:border-yellow-500 focus:bg-yellow-50
+										border-neutral-400
+
+										select-none
+								">
+									List
+								</a>
+							</li>
+							<li class="flex-1 flex">
+								<a href="#voting"
+									draggable="false"
+									class="
+										flex-1 text-center items-center
+										outline-none border px-3 py-2
+
+										data-[active=true]:text-amber-900
+										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
+										hover:border-yellow-500 hover:bg-yellow-50
+										focus:border-yellow-500 focus:bg-yellow-50
+										border-neutral-400
+
+										select-none
+								">
+									Voting
+								</a>
+							</li>
+							<li class="flex-1 flex">
+								<a href="#ranking"
+									draggable="false"
+									class="
+										flex-1 text-center items-center
+										outline-none border px-3 py-2
+										
+										data-[active=true]:text-amber-900
+										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
+										hover:border-yellow-500 hover:bg-yellow-50
+										focus:border-yellow-500 focus:bg-yellow-50
+										border-neutral-400
+
+										select-none
+								">
+									Ranking
+								</a>
+							</li>
+							<li class="flex-1 flex">
+								<a href="#archive"
+									draggable="false"
+									class="
+										flex-1 text-center items-center
+										outline-none border px-3 py-2
+										
+										data-[active=true]:text-amber-900
+										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
+										hover:border-yellow-500 hover:bg-yellow-50
+										focus:border-yellow-500 focus:bg-yellow-50
+										border-neutral-400
+
+										select-none
+								">
+									Archive
+								</a>
+							</li>
+						</menu>
+					</nav>
+
+
+				</header>
+
+			<!-- ADDING VALUES -->
+				<div id="adding"
+					class="
+						nav-anchor data-[hidden=true]:hidden
+						border pt-5 pb-6
+				">
+					<h2 id="adding--title" class="m-0 font-mono font-bold px-6 mb-4">List</h2>
+
+					<ul id="adding--list"
+						class="
+							relative
+							flex flex-col
+						"
+					></ul>
+
+					<div id="adding--box"
+						class="
+							flex gap-4 flex-wrap justify-between items-center
+							px-6 pt-6
+						"
+					>
+						<input id="adding--input"
+							type="text" placeholder="value..." autocomplete="off"
+							class="
+								py-2 px-1 flex-1 min-w-[100px]
+								outline-none border-b
+								
+								placeholder:text-neutral-400 placeholder:select-none
+								focus:placeholder:text-neutral-200
+								focus:border-neutral-900
+							"
+						>
+
+						<button id="adding--btn"
+							type="button"
+							class="
+								outline-none border
+								px-8 py-2 ml-auto
+
+								hover:border-green-500 hover:bg-green-50
+								focus:border-green-500 focus:bg-green-50
+								border-neutral-400
+
+								select-none
+							"
+						>
+							add
+						</button>
+					</div>
+				</div>
+			
+			<!-- VOTING FOR VALUES -->
+				<div id="voting"
+					data-hidden="nojs"
+					class="
+						nav-anchor hidden data-[hidden=false]:flex
+						border px-6 pt-5 pb-6 data-[hidden='nojs']:mt-8 flex-col gap-4
+				">
+					<h2 id="voting--title" class="m-0 font-mono font-bold">Voting</h2>
+					
+					<div id="voting-pair"
+						class="flex gap-4 flex-wrap"
+					>
+						<button id="left-vote-btn"
+							disabled
+							class="
+								outline-none border
+								flex-1 p-6
+
+								disabled:bg-neutral-100 disabled:text-neutral-300
+								disabled:border-[#e5e7eb]
+								hover:border-blue-500 hover:bg-blue-50
+								focus:border-blue-500 focus:bg-blue-50
+								border-neutral-400
+
+								select-none
+							"
+						>start</button>
+
+						<button id="right-vote-btn"
+							disabled
+							class="
+								outline-none border
+								flex-1 p-6
+
+								disabled:bg-neutral-100 disabled:text-neutral-300
+								disabled:border-[#e5e7eb]
+								hover:border-blue-500 hover:bg-blue-50
+								focus:border-blue-500 focus:bg-blue-50
+								border-neutral-400
+
+								select-none
+							"
+						>voting</button>
+					</div>
+					
+					<div class="flex gap-4 flex-wrap">
+						<button id="reset-voting"
+							class="
+								outline-none border
+								px-6 py-2 mr-auto
+								text-neutral-500
+
+								hover:border-red-500 hover:bg-red-50 hover:text-black
+								focus:border-red-500 focus:bg-red-50 focus:text-black
+
+								select-none
+							"
+						>
+							reset
+						</button>
+
+						<button id="start-voting"
+							class="
+								outline-none border
+								px-6 py-2 flex-1
+
+								disabled:bg-neutral-100 disabled:text-neutral-300
+								disabled:border-[#e5e7eb]
+								hover:border-green-500 hover:bg-green-50
+								focus:border-green-500 focus:bg-green-50
+								border-neutral-400
+
+								select-none
+							"
+						>
+							start
+						</button>
+					</div>
+
+				</div>
+
+			<!-- RANKING -->
+				<div id="ranking"
+					data-hidden="nojs"
+					class="
+						nav-anchor hidden data-[hidden=false]:flex
+						border px-6 pt-5 pb-6 data-[hidden='nojs']:mt-8 flex-col gap-6
+				">
+
+					<div class="
+						flex gap-4 justify-between items-center
+					">
+						<h2 id="ranking--title" class="peer m-0 font-mono font-bold">Ranking</h2>
+						<span id="ranking--date" class="hidden peer-[.done]:block text-xs text-right ml-auto"></span>
+					</div>
+				
+					<ul id="ranking--list"
+						class="flex flex-col"
+					></ul>
+				</div>
+
+			<!-- ARCHIVE -->
+				<div id="archive"
+					data-hidden="nojs"
+					class="
+						nav-anchor hidden data-[hidden=false]:flex
+						border px-6 pt-5 pb-6 data-[hidden='nojs']:mt-8 flex-col gap-6
+				">
+					<h2 id="archive--title" class="m-0 font-mono font-bold">Archive</h2>
+						<div id="past-ranking"></div>
+
+					<nav class="flex items-center justify-around">
+						<button id="archive--prev-btn"
+							disabled
+							class="
+								scale-x-[-1]
+								px-[14px] py-2
+								outline-none border border-neutral-100
+
+								disabled:border-neutral-100 disabled:bg-transparent disabled:text-neutral-400
+								hover:border-yellow-500 hover:bg-yellow-50 hover:text-amber-950
+								focus:border-yellow-500 focus:bg-yellow-50 focus:text-amber-950
+							"
+						>
+							➔
+						</button>
+						<span id="archive--page" class="text-sm">1</span>
+						<button id="archive--next-btn" 
+							disabled
+							class="
+								px-[14px] py-2
+								outline-none border border-neutral-100
+
+								disabled:border-neutral-100 disabled:bg-transparent disabled:text-neutral-400
+								hover:border-yellow-500 hover:bg-yellow-50 hover:text-amber-950
+								focus:border-yellow-500 focus:bg-yellow-50 focus:text-amber-950
+							"
+						>
+							➔
+						</button>
+					</nav>
+				</div>
+
+		</div>
+
+		<div id="backroom" class="hidden invisible opacity-0"></div> <!-- BACKROOM -->
+	</body>
+
+</html>
