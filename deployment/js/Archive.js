@@ -7,7 +7,7 @@ export function renderArchive(index) {
   const page = index+1
   if (archive[index]) {
     id('past-ranking').innerHTML = `
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-6">
         ${archive[index]}
       </div>
     `

@@ -51,6 +51,7 @@ export function generateRanking() {
 
           hover:border-red-500 hover:bg-red-50 hover:text-black
           focus:border-red-500 focus:bg-red-50 focus:text-black
+          active:border-red-500 active:bg-red-50 active:text-black
 
           select-none
         "
@@ -68,9 +69,9 @@ export function generateRanking() {
 export function archiveRanking() {
   // BACKROOM EDITING
     id('backroom').innerHTML = JSON.parse(localStorage.getItem('saved_ranking'))
-      id('backroom').querySelectorAll('div')[0].classList.add('mt-[-1.125rem]')
       query('#ranking--title', id('backroom')).remove()
         unklassify(query('#ranking--date', id('backroom')), 'hidden')
+        query('#ranking--date', id('backroom')).classList.add('mb-1')
       query('#ranking--date', id('backroom')).removeAttribute('id')
       query('#ranking--list', id('backroom')).removeAttribute('id')
       query('#ranking--remove-btn', id('backroom')).dataset.remover = true

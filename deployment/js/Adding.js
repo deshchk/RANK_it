@@ -81,7 +81,8 @@ export function renderAdding() {
             data-[over=true]:text-neutral-300
 
             hover:bg-neutral-100
-            focus-within:bg-neutral-50
+            active:bg-neutral-100
+            focus-within:bg-neutral-100
 
             cursor-move select-none
           "
@@ -94,6 +95,7 @@ export function renderAdding() {
 
               hover:text-red-500
               focus:text-red-500
+              active:text-red-500
 
               pl-2 pr-[7px]
             "
