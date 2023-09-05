@@ -4,13 +4,15 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link href="./style.css" rel="stylesheet">
+		<!-- drag and drop for touch devices by Bernardo Castilho -->
+		<script defer src="./js/ddropTouch.js"></script>
 		<script defer src="./app.js" type="module"></script>
 		<title>val·u</title>
 	</head>
 
-	<body class="flex place-content-center">
+	<body class="flex place-content-center touch-pan-y">
 
 		<div id="wrapper"
 			class="
