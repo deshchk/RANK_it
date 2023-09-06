@@ -16,7 +16,7 @@ export const shuffle = arr => {
 // pair all elements of an array with each other and put a slash '/' between them
 export const pair = arr => arr.flatMap((val, i) => arr.slice(i+1).map(rest => val + '/' + rest))
 // split a string into two parts and return just one
-export const slash = (el, part) => el.replace(/(\D*)(?:\/)([a-zA-Z]+\D*)/g, `$${part}`)
+export const slash = (el, part) => el.replace(/(\D*)(?:\/)(\S+\D*)/g, `$${part}`)
 
 
 // split an array into parallel and randomly paired arrays
@@ -36,6 +36,8 @@ export const split = arr => {
       right.push(slash(pair, 1))
     }
   })
+
+  console.log(left, right)
 
   return { l: left, r: right }
 }

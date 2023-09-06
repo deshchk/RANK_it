@@ -19,12 +19,10 @@ export function add() {
     values.push(input.replace(/\s+/g, ' ').trim())
     localStorage.setItem('values', JSON.stringify(values))
     splitValues()
-    render()
     resetVoting()
     voting('reset')
+    render()
   } else { clear() }
-  
-  document.activeElement.blur()
 }
 
 
