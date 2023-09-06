@@ -27,22 +27,43 @@ import { removeArchive, renderArchive } from "./js/Archive.js"
 		}
 	})
 
+// D R A G   A N D   D R O P
+	const touchDevice = (navigator.maxTouchPoints & 0xFF || 'ontouchstart' in document.documentElement)
 	let dragging = false
-	id('adding--list').addEventListener('mousedown', e => {
-		const draggables = id('adding--list').querySelectorAll('li > .dragger')
-		if (Array.from(draggables).includes(e.target)) {
-			dragging = !dragging
-			e.target.parentNode.setAttribute('draggable', true)
-		}
-	})
 
-	id('adding--list').addEventListener('mouseup', e => {
-		const listItems = id('adding--list').querySelectorAll('li')
-		if (dragging) {
-			dragging = !dragging
-			listItems.forEach(item => {item.removeAttribute('draggable')})
-		}
-	})
+	if (touchDevice) {
+		id('adding--list').addEventListener('touchstart', e => {
+			const draggables = id('adding--list').querySelectorAll('li > .dragger')
+			if (Array.from(draggables).includes(e.target)) {
+				dragging = !dragging
+				e.target.parentNode.setAttribute('draggable', true)
+			}
+		})
+	
+		id('adding--list').addEventListener('touchend', e => {
+			const listItems = id('adding--list').querySelectorAll('li')
+			if (dragging) {
+				dragging = !dragging
+				listItems.forEach(item => {item.removeAttribute('draggable')})
+			}
+		})
+	} else {
+		id('adding--list').addEventListener('mousedown', e => {
+			const draggables = id('adding--list').querySelectorAll('li > .dragger')
+			if (Array.from(draggables).includes(e.target)) {
+				dragging = !dragging
+				e.target.parentNode.setAttribute('draggable', true)
+			}
+		})
+	
+		id('adding--list').addEventListener('mouseup', e => {
+			const listItems = id('adding--list').querySelectorAll('li')
+			if (dragging) {
+				dragging = !dragging
+				listItems.forEach(item => {item.removeAttribute('draggable')})
+			}
+		})
+	}
 
 
 
@@ -156,6 +177,7 @@ id('navigation').addEventListener('click', e => {
 
 // INITIALIZE
 	render()
+
 	window.addEventListener('load', () => {
 		if (JSON.parse(localStorage.getItem('values')).length > 3) {
 			id('start-voting').disabled = false
