@@ -30,6 +30,8 @@ export function renderArchive(index) {
     if (page < archive.length) {
 			id('archive--next-btn').disabled = false
 		}
+
+    id('past-ranking').dataset.loaded = true
 		
   } else {
     id('past-ranking').innerHTML = `

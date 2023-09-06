@@ -66,29 +66,36 @@ export function renderAdding() {
 
       return `
         <li id="${index}"
-          draggable="true"
           data-over="false"
           class="
             relative
-            flex gap-x-3 justify-between items-center
-            pl-10 pr-6 pt-2 pb-[9px]
-
-            before:content-['⋅'] before:absolute before:left-5 before:text-neutral-300
+            flex items-center gap-x-3
+            pl-5 pr-6 pt-2 pb-[9px]
 
             data-[over=true]:outline-dashed outline-neutral-400 outline-1
             data-[over=true]:text-neutral-300
 
             hover:bg-neutral-100
-            active:bg-neutral-100
             focus-within:bg-neutral-100
 
-            cursor-move select-none
+            cursor-default select-none
           "
         >
-          ${value}
+
+          <img src="./imgs/drag.svg"
+            alt="drag this item"
+            draggable="false"
+            class="
+             dragger opacity-20 cursor-move
+          ">
+
+            <span class="ml-2 truncate">
+              ${value}
+            </span>
+
           <button id="remove-${index}"
             class="
-              outline-none
+              outline-none ml-auto
               text-neutral-400
 
               hover:text-red-500

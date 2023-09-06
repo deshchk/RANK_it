@@ -5,9 +5,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<!-- imports -->
+			<!-- google font – Open Sans -->
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+			<!-- drag and drop for touch devices by Bernardo Castilho -->
+				<script defer src="./js/ddropTouch.js"></script>
+		<!-- /imports -->
 		<link href="./style.css" rel="stylesheet">
-		<!-- drag and drop for touch devices by Bernardo Castilho -->
-		<script defer src="./js/ddropTouch.js"></script>
 		<script defer src="./app.js" type="module"></script>
 		<title>val·u</title>
 	</head>
@@ -38,15 +44,17 @@
 
 					<nav class="w-full">
 						<menu id="navigation"
-							class="flex gap-4 justify-between flex-wrap"
+							class="flex gap-x-4 gap-y-2 justify-between flex-wrap"
 						>
 							<li class="flex-1 flex">
 								<a href="#adding"
 									draggable="false"
 									data-active="true"
 									class="
-										flex-1 text-center items-center
-										outline-none border px-3 py-2
+										flex-1 flex items-center justify-center
+										outline-none border px-3 py-[6px]
+
+										text-[15px]
 										
 										data-[active=true]:text-amber-900
 										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
@@ -63,8 +71,10 @@
 								<a href="#voting"
 									draggable="false"
 									class="
-										flex-1 text-center items-center
-										outline-none border px-3 py-2
+										flex-1 flex items-center justify-center
+										outline-none border px-3 py-[6px]
+
+										text-[15px]
 
 										data-[active=true]:text-amber-900
 										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
@@ -81,8 +91,10 @@
 								<a href="#ranking"
 									draggable="false"
 									class="
-										flex-1 text-center items-center
-										outline-none border px-3 py-2
+										flex-1 flex items-center justify-center
+										outline-none border px-3 py-[6px]
+
+										text-[15px]
 										
 										data-[active=true]:text-amber-900
 										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
@@ -99,8 +111,10 @@
 								<a href="#archive"
 									draggable="false"
 									class="
-										flex-1 text-center items-center
-										outline-none border px-3 py-2
+										flex-1 flex items-center justify-center
+										outline-none border px-3 py-[6px]
+
+										text-[15px]
 
 										data-[active=true]:text-amber-900
 										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50

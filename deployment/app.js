@@ -27,6 +27,23 @@ import { removeArchive, renderArchive } from "./js/Archive.js"
 		}
 	})
 
+	let dragging = false
+	id('adding--list').addEventListener('mousedown', e => {
+		const draggables = id('adding--list').querySelectorAll('li > .dragger')
+		if (Array.from(draggables).includes(e.target)) {
+			dragging = !dragging
+			e.target.parentNode.setAttribute('draggable', true)
+		}
+	})
+
+	id('adding--list').addEventListener('mouseup', e => {
+		const listItems = id('adding--list').querySelectorAll('li')
+		if (dragging) {
+			dragging = !dragging
+			listItems.forEach(item => {item.removeAttribute('draggable')})
+		}
+	})
+
 
 
 // V O T I N G

@@ -1,5 +1,6 @@
 import { render } from "../app.js"
 import { values } from "./data.js"
+import { id } from "./utility.js"
 
 let draggedAt
 let dropAt
@@ -20,10 +21,19 @@ export function dragDrop() {
   render()
 }
 
+let counter = 0
 export function dragEnter() {
+  counter++
+  const listItems = id('adding--list').querySelectorAll('li')
+  listItems.forEach(item => {
+    item.dataset.over = false
+  })
   this.dataset.over = true
 }
 
 export function dragLeave() {
-  this.dataset.over = false
+  counter--
+  if (counter === 0) {
+    this.dataset.over = false
+  }
 }
