@@ -1190,6 +1190,10 @@ video {
   margin-top: 2rem;
 }
 
+.data-\[loaded\=true\]\:mt-\[-44px\][data-loaded=true] {
+  margin-top: -44px;
+}
+
 .data-\[hidden\=false\]\:flex[data-hidden=false] {
   display: flex;
 }

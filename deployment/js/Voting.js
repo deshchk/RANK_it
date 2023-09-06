@@ -30,6 +30,8 @@ export function voting(status) {
       if (localStorage.getItem('saved_ranking')) {
         archiveRanking()
         renderArchive(0)
+        
+        id('past-ranking').dataset.loaded = true
       }
       
       generateRanking()

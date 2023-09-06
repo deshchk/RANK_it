@@ -49,7 +49,6 @@ import { removeArchive, renderArchive } from "./js/Archive.js"
 
 	id('reset-voting').addEventListener('click', () => {
 		resetVoting()
-		console.log(values_split)
 	})
 
 	id('left-vote-btn').addEventListener('click', () => {

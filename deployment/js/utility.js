@@ -37,8 +37,6 @@ export const split = arr => {
     }
   })
 
-  console.log(left, right)
-
   return { l: left, r: right }
 }
 

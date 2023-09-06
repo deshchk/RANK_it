@@ -46,7 +46,8 @@ export function renderArchive(index) {
 export function removeArchive() {
   const index = Number(id('archive--page').innerText)-1
   const archive = JSON.parse(localStorage.getItem('ranking_archive'))
-  localStorage.setItem('ranking_archive', JSON.stringify(archive.toSpliced(index, 1)))
+  const update = archive.toSpliced(index, 1)
+  localStorage.setItem('ranking_archive', JSON.stringify(update))
 
   id('archive--page').innerText = (archive.length > 1) ?
     getArchivePage() - 1 : 
@@ -57,4 +58,8 @@ export function removeArchive() {
       getArchivePage() :
       getArchivePage() - 1
   )
+
+  if (update.length === 0) {
+    id('past-ranking').dataset.loaded = false
+  }
 }
