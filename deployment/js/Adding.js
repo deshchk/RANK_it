@@ -82,12 +82,11 @@ export function renderAdding() {
           "
         >
 
-          <img src="./imgs/drag.svg"
-            alt="drag this item"
-            draggable="false"
-            class="
-             dragger opacity-20 cursor-move
-          ">
+          <div class="
+             dragger opacity-[.18] cursor-move
+             bg-[url(./imgs/drag.svg)] bg-no-repeat bg-center
+             w-5 self-stretch
+          "></div>
 
             <span class="ml-2 truncate">
               ${value}
