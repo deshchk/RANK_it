@@ -168,7 +168,7 @@ id('navigation').addEventListener('click', e => {
 		renderVoting(votingRound) // VOTING
 
 		clear()
-		if (votingRound === 0) {
+		if (votingRound === 0 && !touchDevice) {
 			id('adding--input').focus()
 		}
 	}
