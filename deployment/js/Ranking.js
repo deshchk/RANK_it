@@ -100,7 +100,7 @@ export function renderRanking() {
   if (!localStorage.getItem('saved_ranking')) {
     id('ranking--list').innerHTML = `
       <li class="italic text-neutral-300 self-center text-center">
-        — tutaj po głosowaniu pojawią się wyniki —
+        — tutaj po głosowaniu pojawią się twoje wyniki —
       </li>
     `
     id('ranking--title').classList.remove('done')

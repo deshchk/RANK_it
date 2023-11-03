@@ -36,8 +36,8 @@ export function voting(status) {
         navigateTo('#ranking')
       resetVoting()
 
-      id('left-vote-btn').textContent = 'voting'
-      id('right-vote-btn').textContent = 'finished'
+      id('left-vote-btn').textContent = 'głosowanie'
+      id('right-vote-btn').textContent = 'zakończone'
       id('start-voting').disabled = true
   }
 

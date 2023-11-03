@@ -183,10 +183,16 @@ id('navigation').addEventListener('click', e => {
 	render()
 
 	window.addEventListener('load', () => {
+		if (!localStorage.getItem('values') && !localStorage.getItem('ranking_archive')) {
+			localStorage.setItem('values', JSON.stringify([]))
+			localStorage.setItem('ranking_archive', JSON.stringify([]))
+		} // INITIALIZE LOCALSTORAGE
+
 		if (JSON.parse(localStorage.getItem('values')).length > 3) {
 			id('start-voting').disabled = false
 			id('min-four').hidden = true
 		} // ABLE TO START VOTING
+
 		renderRanking() // RANKING
 		renderArchive(0) // ARCHIVE
 		// NAVIGATION
