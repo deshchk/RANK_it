@@ -41,9 +41,9 @@ export function remove(targetID) {
   values.splice(targetID.split('-')[1], 1)
   localStorage.setItem('values', JSON.stringify(values))
   splitValues()
-  render()
   resetVoting()
   voting('reset')
+  render()
 }
 
 
@@ -58,7 +58,7 @@ export function renderAdding() {
   // render nothing or values' list if there are some in the array/local storage
   if(values.length === 0) {
     id('adding--list').innerHTML = `
-      <li class="italic text-neutral-300 self-center">- nothing yet -</li>
+      <li class="italic text-neutral-300 self-center">— nic tu nie ma... jeszcze —</li>
     `
   } else {
     const listHtml = values.map(value => {

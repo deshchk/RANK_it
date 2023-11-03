@@ -36,7 +36,7 @@ export function renderArchive(index) {
   } else {
     id('past-ranking').innerHTML = `
       <div class="flex flex-col gap-4">
-        <span class="italic text-neutral-300 text-center">- nothing in here yet -</span>
+        <span class="italic text-neutral-300 text-center">— tutaj zapiszemy twoje stare rankingi —</span>
       </div>
     `
 

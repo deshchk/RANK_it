@@ -77,6 +77,10 @@ import { removeArchive, renderArchive } from "./js/Archive.js"
 			renderVoting(votingRound)
 			if (JSON.parse(localStorage.getItem('values')).length > 3) {
 				id('start-voting').disabled = false
+				id('min-four').hidden = true
+			} else {
+				id('start-voting').disabled = true
+				id('min-four').hidden = false
 			}
 			document.activeElement.blur()
 		}
@@ -181,6 +185,7 @@ id('navigation').addEventListener('click', e => {
 	window.addEventListener('load', () => {
 		if (JSON.parse(localStorage.getItem('values')).length > 3) {
 			id('start-voting').disabled = false
+			id('min-four').hidden = true
 		} // ABLE TO START VOTING
 		renderRanking() // RANKING
 		renderArchive(0) // ARCHIVE

@@ -15,7 +15,7 @@
 		<!-- /imports -->
 		<link href="./style.css" rel="stylesheet">
 		<script defer src="./app.js" type="module"></script>
-		<title>val·u</title>
+		<title>rank_it</title>
 	</head>
 
 	<body class="flex place-content-center touch-pan-y">
@@ -36,11 +36,9 @@
 						select-none
 					"
 				>
-					<img
-						src="./imgs/logo.svg"
-						alt="logo" draggable="false"
-						class="w-1/3 min-w-[130px]"
-					>
+					<h1 draggable="false" id="logo" class="
+						text-4xl mb-1 tracking-wider font-bold
+					">rank_it</h1>
 
 					<nav class="w-full">
 						<menu id="navigation"
@@ -64,7 +62,7 @@
 
 										select-none
 								">
-									List
+									Lista
 								</a>
 							</li>
 							<li class="flex-1 flex">
@@ -84,7 +82,7 @@
 
 										select-none
 								">
-									Voting
+									Głosuj
 								</a>
 							</li>
 							<li class="flex-1 flex">
@@ -114,17 +112,17 @@
 										flex-1 flex items-center justify-center
 										outline-none border px-3 py-[6px]
 
-										text-[15px]
+										text-[15px] text-neutral-400
 
 										data-[active=true]:text-amber-900
 										data-[active=true]:border-yellow-500 data-[active=true]:bg-yellow-50
-										hover:border-yellow-500 hover:bg-yellow-50
-										focus:border-yellow-500 focus:bg-yellow-50
-										border-neutral-400
+										hover:border-yellow-500 hover:bg-yellow-50 hover:text-black
+										focus:border-yellow-500 focus:bg-yellow-50 focus:text-black
+										border-neutral-300
 
 										select-none
 								">
-									Archive
+									Archiwum
 								</a>
 							</li>
 						</menu>
@@ -139,12 +137,12 @@
 						nav-anchor data-[hidden=true]:hidden
 						border pt-5 pb-6
 				">
-					<h2 id="adding--title" class="m-0 font-mono font-bold px-6 mb-2">List</h2>
+					<h2 id="adding--title" class="m-0 font-mono font-bold px-6 mb-2">Lista</h2>
 					<p class="
 						px-6 mb-6 leading-normal
 						text-neutral-400 text-sm italic
 					">
-						What's important to you? What has a value? What is at least slightly significant?
+						Poniżej wpisz wszystko to, co chcesz wystopniować.
 					</p>
 
 					<ul id="adding--list"
@@ -161,7 +159,7 @@
 						"
 					>
 						<input id="adding--input"
-							type="text" placeholder="value..." autocomplete="off"
+							type="text" placeholder="wpisz coś..." autocomplete="off"
 							class="
 								py-2 px-1 flex-1 min-w-[100px]
 								outline-none border-b rounded-none
@@ -186,7 +184,7 @@
 								select-none
 							"
 						>
-							add
+							dodaj
 						</button>
 					</div>
 				</div>
@@ -198,12 +196,12 @@
 						nav-anchor hidden data-[hidden=false]:flex
 						border px-6 pt-5 pb-6 data-[hidden='nojs']:mt-8 flex-col gap-4
 				">
-					<h2 id="voting--title" class="m-0 font-mono font-bold">Voting</h2>
+					<h2 id="voting--title" class="m-0 font-mono font-bold">Głosuj</h2>
 					<p class="
 						mt-[-9px] mb-2 leading-normal
 						text-neutral-400 text-sm italic
-					">
-						You need at least 4 values on your list to rank them.
+					" id="min-four">
+						Potrzebujesz minimum 4 elementów na liście, aby móc rozpocząć głosowanie.
 					</p>
 					
 					<div id="voting-pair"
@@ -224,7 +222,7 @@
 
 								select-none
 							"
-						>start</button>
+						>zacznij</button>
 
 						<button id="right-vote-btn"
 							disabled
@@ -241,7 +239,7 @@
 
 								select-none
 							"
-						>voting</button>
+						>głosować</button>
 					</div>
 					
 					<div class="flex gap-4 flex-wrap">
@@ -310,7 +308,7 @@
 						nav-anchor hidden data-[hidden=false]:flex
 						border px-6 pt-5 pb-6 data-[hidden='nojs']:mt-8 flex-col gap-6
 				">
-					<h2 id="archive--title" class="m-0 font-mono font-bold">Archive</h2>
+					<h2 id="archive--title" class="m-0 font-mono font-bold">Archiwum</h2>
 						<div id="past-ranking" class="data-[loaded=true]:mt-[-44px]" data-loaded="false"></div>
 
 					<nav class="flex items-center justify-around">

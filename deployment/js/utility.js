@@ -13,10 +13,10 @@ export const shuffle = arr => {
   }
   return arr
 }
-// pair all elements of an array with each other and put a slash '/' between them
-export const pair = arr => arr.flatMap((val, i) => arr.slice(i+1).map(rest => val + '/' + rest))
+// pair all elements of an array with each other and put a '҂' between them
+export const pair = arr => arr.flatMap((val, i) => arr.slice(i+1).map(rest => val + '҂' + rest))
 // split a string into two parts and return just one
-export const slash = (el, part) => el.replace(/(\D*)(?:\/)(\S+\D*)/g, `$${part}`)
+export const slash = (el, part) => el.replace(/(\D*)(?:\҂)(\S+\D*)/g, `$${part}`)
 
 
 // split an array into parallel and randomly paired arrays

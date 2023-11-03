@@ -38,7 +38,7 @@ export function generateRanking() {
 
   id('ranking--list').innerHTML = rankingHtml
 
-  id('ranking--date').innerHTML = `<i class="text-neutral-400">dated: </i>` + new Date().toLocaleDateString("pl-PL").replace(/\./g, '/')
+  id('ranking--date').innerHTML = `<span class="inline-block text-neutral-400 italic pr-1">data: </span>` + new Date().toLocaleDateString("pl-PL").replace(/\./g, '/')
   id('ranking--title').classList.add('done')
 
   if (!id('ranking--remove-btn')) {
@@ -56,7 +56,7 @@ export function generateRanking() {
           select-none
         "
       >
-        remove this entry
+        usuń ranking
       </button>
     `
   }
@@ -100,7 +100,7 @@ export function renderRanking() {
   if (!localStorage.getItem('saved_ranking')) {
     id('ranking--list').innerHTML = `
       <li class="italic text-neutral-300 self-center text-center">
-        - finish voting to see your results -
+        — tutaj po głosowaniu pojawią się wyniki —
       </li>
     `
     id('ranking--title').classList.remove('done')
